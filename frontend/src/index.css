@@ -1,0 +1,129 @@
+/* ================= IMPORT FONTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ================= TAILWIND DIRECTIVES ================= */
+/* UNCOMMENTED THESE - REQUIRED FOR TAILWIND TO WORK */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= BASE VARIABLES ================= */
+@layer base {
+  :root {
+    --background: 150 10% 6%;
+    --foreground: 80 20% 95%;
+
+    --card: 150 12% 10%;
+    --card-foreground: 80 20% 95%;
+
+    --popover: 150 12% 10%;
+    --popover-foreground: 80 20% 95%;
+
+    --primary: 100 80% 45%;
+    --primary-foreground: 150 10% 6%;
+
+    --secondary: 150 15% 16%;
+    --secondary-foreground: 80 20% 90%;
+
+    --muted: 150 10% 14%;
+    --muted-foreground: 150 10% 55%;
+
+    --accent: 80 90% 50%;
+    --accent-foreground: 150 10% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 12% 18%;
+    --input: 150 12% 18%;
+    --ring: 100 80% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 150 12% 8%;
+    --sidebar-foreground: 80 20% 90%;
+    --sidebar-primary: 100 80% 45%;
+    --sidebar-primary-foreground: 150 10% 6%;
+    --sidebar-accent: 150 15% 16%;
+    --sidebar-accent-foreground: 80 20% 90%;
+    --sidebar-border: 150 12% 18%;
+    --sidebar-ring: 100 80% 45%;
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(150 15% 8%) 0%, hsl(120 20% 12%) 50%, hsl(150 15% 8%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(100 80% 45%), hsl(80 90% 50%));
+    --shadow-glow: 0 0 40px hsl(100 80% 45% / 0.2);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
+
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  /* ================= GLOBAL ELEMENT STYLES ================= */
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* ================= CUSTOM COMPONENTS ================= */
+@layer components {
+  /* Add any component-specific styles here if needed */
+  .section-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+}
+
+/* ================= CUSTOM UTILITIES ================= */
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
